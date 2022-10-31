@@ -1,4 +1,4 @@
-module github.com/1000MilesAway/queues_go/tree/main
+module github.com/1000MilesAway/queues_go
 
 go 1.19
 

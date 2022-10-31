@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
-	"github.com/1000MilesAway/queues_go/tree/main/tracker"
+	"github.com/1000MilesAway/queues_go/tracker"
 	geom "github.com/twpayne/go-geom"
 	"gocv.io/x/gocv"
 )
