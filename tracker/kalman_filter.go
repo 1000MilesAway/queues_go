@@ -6,10 +6,10 @@ import (
 )
 
 const ndim, dt = 4, 1.
-var motion_mat = DiagOnes(ndim)
+var Motion_mat = DiagOnes(ndim)
 
 func DiagOnes(ndim int) mat.Dense {
-	data := make([]float64, .0)
+	data := make([]float64, ndim*ndim)
 	for i := 0; i < ndim; i++ {
 		for j := 0; j < ndim; j++ {
 			if i == j {

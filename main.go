@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
-	"github.com/1000MilesAway/queues_go/tracker"
+	"queues_go/tracker"
 	geom "github.com/twpayne/go-geom"
 	"gocv.io/x/gocv"
 )
@@ -53,7 +53,7 @@ func PersonArea(person [][]float64) float64 {
 	for _, xy := range person {
 		coordinates = append(coordinates, geom.Coord(xy))
 	}
-	fmt.Println(coordinates)
+	// fmt.Println(coordinates)
 	kal := [][]geom.Coord{coordinates}
 	personPolygon := geom.NewPolygon(geom.XY).MustSetCoords(kal)
 	return math.Abs(personPolygon.Area())
@@ -63,8 +63,9 @@ func main() {
 	webcam, _ := gocv.VideoCaptureFile("video.mp4")
 	window := gocv.NewWindow("Hello")
 	img := gocv.NewMat()
-	kal := tracker.KalmanFilter{Score: 0.8}
-	fmt.Println(kal)
+	fmt.Println("jopa")
+	// _ := tracker.KalmanFilter{Score: 0.8}
+	fmt.Println(tracker.Motion_mat)
 	for {
 		webcam.Read(&img)
 		window.IMShow(img)
@@ -87,7 +88,7 @@ func main() {
 			boxes = append(boxes, [4]int{int(x1 * float64(w)), int(y1 * float64(h)), int(x2 * float64(w)), int(y2 * float64(h))})
 		}
 
-		fmt.Println(boxes)
-		fmt.Println(scores)
+		// fmt.Println(boxes)
+		// fmt.Println(scores)
 	}
 }
